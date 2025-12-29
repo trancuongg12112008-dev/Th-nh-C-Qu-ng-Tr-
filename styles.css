@@ -1,0 +1,1476 @@
+/* Reset và Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-location {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    background: #8B4513;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+    padding: 5rem 0;
+}
+
+.section-alt {
+    background: white;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #8B4513;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #8B4513, #D2691E);
+    border-radius: 2px;
+}
+
+/* Intro Section */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.lead {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #8B4513;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.intro-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, #f8f4f0 0%, #fff 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid #8B4513;
+    margin-top: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-box h3 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, #8B4513, #D2691E);
+    height: 300px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.image-placeholder span {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #8B4513, #D2691E);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-year {
+    background: #8B4513;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    min-width: 120px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+.timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 2rem;
+    border-left: 4px solid #D2691E;
+}
+
+.timeline-content h3 {
+    color: #8B4513;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Architecture Grid */
+.architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.arch-feature {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #8B4513;
+}
+
+.arch-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.arch-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.arch-feature h3 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Significance Section */
+.significance-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.significance-main h3 {
+    color: #8B4513;
+    margin: 2rem 0 1rem 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+}
+
+.significance-main h3:first-child {
+    margin-top: 0;
+}
+
+.memorial-box {
+    background: linear-gradient(135deg, #8B4513, #D2691E);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
+}
+
+.memorial-box h3 {
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Visit Info */
+.visit-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.visit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #8B4513;
+}
+
+.visit-card h3 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.visit-card ul {
+    list-style: none;
+}
+
+.visit-card li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.visit-card li::before {
+    content: '•';
+    color: #8B4513;
+    position: absolute;
+    left: 0;
+}
+
+/* Footer */
+.footer {
+    background: #2c1810;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: #D2691E;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    text-align: center;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .intro-grid,
+    .significance-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: row !important;
+        padding-left: 60px;
+    }
+    
+    .timeline-year {
+        position: absolute;
+        left: 0;
+        min-width: auto;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 0;
+    }
+    
+    .timeline-content {
+        margin-left: 0;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .architecture-grid,
+    .visit-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Styles cho trang lịch sử */
+.hero-small {
+    height: 60vh;
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-link:hover {
+    background: white;
+    color: #8B4513;
+    transform: translateY(-2px);
+}
+
+.detail-box {
+    background: rgba(139, 69, 19, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    border-left: 4px solid #8B4513;
+}
+
+.detail-box ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.detail-box li {
+    margin-bottom: 0.5rem;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+.history-text h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.resistance-box {
+    background: linear-gradient(135deg, #8B4513, #D2691E);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
+}
+
+.resistance-box h3 {
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.war-period {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.war-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.war-intro h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.battle-timeline {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.battle-timeline h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.battle-phase {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-left: 4px solid #D2691E;
+    background: #f8f4f0;
+    border-radius: 0 10px 10px 0;
+}
+
+.battle-phase h4 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.casualties-box {
+    background: linear-gradient(135deg, #2c1810, #8B4513);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.casualties-box h3 {
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+}
+
+.memorial-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #D2691E;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.modern-timeline {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.modern-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #8B4513;
+}
+
+.modern-year {
+    background: #8B4513;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    min-width: 100px;
+    text-align: center;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.modern-content h3 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.current-status {
+    margin-top: 3rem;
+}
+
+.current-status h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.status-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 4px solid #8B4513;
+    transition: transform 0.3s ease;
+}
+
+.status-card:hover {
+    transform: translateY(-5px);
+}
+
+.status-card h4 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Responsive cho trang lịch sử */
+@media (max-width: 768px) {
+    .hero-small {
+        height: 50vh;
+    }
+    
+    .history-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .modern-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .modern-year {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .memorial-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+/* Styles cho trang kiến trúc */
+.architecture-overview {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.overview-content h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.style-features {
+    margin-top: 2rem;
+}
+
+.feature-item {
+    background: rgba(139, 69, 19, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #8B4513;
+}
+
+.feature-item h4 {
+    color: #8B4513;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.overview-specs {
+    background: linear-gradient(135deg, #8B4513, #D2691E);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
+}
+
+.overview-specs h3 {
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.spec-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.spec-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFE4B5;
+}
+
+.spec-unit {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.spec-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.wall-system {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.wall-description h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.wall-layers {
+    margin-top: 2rem;
+}
+
+.layer-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #D2691E;
+}
+
+.layer-item h4 {
+    color: #8B4513;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.wall-features h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.defense-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.defense-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #8B4513;
+    transition: transform 0.3s ease;
+}
+
+.defense-item:hover {
+    transform: translateY(-5px);
+}
+
+.defense-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.defense-item h4 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.wall-construction {
+    background: #f8f4f0;
+    padding: 3rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+}
+
+.wall-construction h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.construction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.construction-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #8B4513;
+}
+
+.construction-card h4 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.construction-card ul {
+    list-style: none;
+}
+
+.construction-card li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.construction-card li::before {
+    content: '•';
+    color: #8B4513;
+    position: absolute;
+    left: 0;
+}
+
+.gate-system {
+    margin-bottom: 3rem;
+}
+
+.gate-overview {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.gate-overview h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.gates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.gate-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 4px solid #8B4513;
+    transition: transform 0.3s ease;
+}
+
+.gate-card:hover {
+    transform: translateY(-5px);
+}
+
+.gate-direction {
+    background: #8B4513;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.gate-card h4 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.gate-features {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.feature-tag {
+    background: rgba(139, 69, 19, 0.1);
+    color: #8B4513;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.gate-architecture {
+    background: #f8f4f0;
+    padding: 3rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+}
+
+.gate-architecture h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gate-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.gate-structure h4,
+.gate-decoration h4 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.structure-list {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.structure-item {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.structure-item:last-child {
+    border-bottom: none;
+}
+
+.gate-decoration ul {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+}
+
+.gate-decoration li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 20px;
+}
+
+.gate-decoration li:last-child {
+    border-bottom: none;
+}
+
+.gate-decoration li::before {
+    content: '🎨';
+    position: absolute;
+    left: 0;
+}
+
+.special-features {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-section {
+    margin-bottom: 4rem;
+}
+
+.feature-section h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.art-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #D2691E;
+}
+
+.art-item h4 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.drainage-system {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.drainage-feature {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.1), rgba(210, 105, 30, 0.1));
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 4px solid #8B4513;
+}
+
+.drainage-feature h4 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.interior-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.layout-area {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #8B4513;
+}
+
+.layout-area h4 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.preservation-status {
+    background: #f8f4f0;
+    padding: 3rem;
+    border-radius: 15px;
+    margin-top: 4rem;
+}
+
+.preservation-status h3 {
+    color: #8B4513;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.preservation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.preservation-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.preservation-card.current {
+    border-left: 4px solid #8B4513;
+}
+
+.preservation-card.efforts {
+    border-left: 4px solid #D2691E;
+}
+
+.preservation-card.future {
+    border-left: 4px solid #CD853F;
+}
+
+.preservation-card h4 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.preservation-card ul {
+    list-style: none;
+}
+
+.preservation-card li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.preservation-card li::before {
+    content: '✓';
+    color: #8B4513;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Responsive cho trang kiến trúc */
+@media (max-width: 768px) {
+    .architecture-overview,
+    .wall-system,
+    .gate-details {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .defense-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .construction-grid,
+    .gates-grid,
+    .art-grid,
+    .drainage-system,
+    .interior-layout,
+    .preservation-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Styles cho hình ảnh */
+.main-image, .history-img, .battle-img, .gates-img, .wall-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.main-image:hover, .history-img:hover, .battle-img:hover, .gates-img:hover, .wall-img:hover {
+    transform: scale(1.05);
+}
+
+.image-caption {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.intro-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.war-image, .gates-overview-image, .wall-image {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.battle-img {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.gates-img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.wall-img {
+    max-height: 350px;
+    object-fit: cover;
+}
+
+/* Gallery styles cho nhiều hình ảnh */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive cho hình ảnh */
+@media (max-width: 768px) {
+    .war-image, .gates-overview-image, .wall-image {
+        margin: 1rem 0;
+    }
+    
+    .battle-img, .gates-img, .wall-img {
+        max-height: 250px;
+    }
+    
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+/* Styles cho gate images */
+.gate-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 1rem;
+}
+
+.gate-card {
+    overflow: hidden;
+}
+
+.gate-card .gate-direction {
+    margin-top: 0;
+}
+
+/* Thêm hiệu ứng cho timeline images */
+.timeline-image {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.timeline-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero background - trở về gradient đơn giản */
+.hero {
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+}
+
+.hero-small {
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+}
+
+/* Lightbox effect cho hình ảnh */
+.image-lightbox {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.image-lightbox:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero, .hero-small {
+        background-attachment: scroll;
+    }
+    
+    .gate-image {
+        height: 120px;
+    }
+}
+/* Styles cho thông tin nhóm */
+.team-members {
+    margin-top: 1rem;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #D2691E;
+    transition: all 0.3s ease;
+}
+
+.member:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.member-name {
+    font-weight: 600;
+    color: #FFE4B5;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.member-role {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    padding-left: 1.5rem;
+}
+
+/* Responsive cho team members */
+@media (max-width: 768px) {
+    .member {
+        padding: 0.6rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .member-name {
+        font-size: 0.9rem;
+    }
+    
+    .member-role {
+        font-size: 0.8rem;
+        padding-left: 1rem;
+    }
+}
